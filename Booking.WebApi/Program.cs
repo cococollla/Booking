@@ -1,25 +1,24 @@
+using Booking.Application;
+using Booking.DAL;
+using Booking.WebApi.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.SwaggerDocumentationGenerat();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.RegisterDataBase(builder.Configuration);
+builder.Services.RegisterService();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.MapControllers();
+
+app.MapDefaultControllerRoute();
+app.UseSwaggerWithUi();
 
 app.Run();

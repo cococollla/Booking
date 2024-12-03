@@ -1,0 +1,36 @@
+version: '3.4'
+
+services:
+  booking.webapi:
+    container_name: booking-api
+    image: ${DOCKER_REGISTRY-}bookingwebapi
+    build:
+      context: .
+      dockerfile: Booking.WebApi/Dockerfile
+    depends_on:
+      - db
+    networks:
+      - bookingnetwork
+    environment:     
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=booking-db;Username=postgress;Password=postgress
+      ASPNETCORE_URLS: http://+:8080 
+
+  db:
+    container_name: booking-db
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgress
+      POSTGRES_PASSWORD: postgress
+      POSTGRES_DB: booking-db
+    ports:
+      - '5435:5432'
+    volumes: 
+      - ./data:/var/lib/postgresql/data
+    networks:
+      - bookingnetwork 
+
+networks:
+  bookingnetwork:
+    driver: bridge
