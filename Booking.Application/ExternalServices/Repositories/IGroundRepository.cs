@@ -11,6 +11,6 @@ namespace Booking.Application.ExternalServices.Repositories
         /// Получение поля по идентификатору.
         /// </summary>
         /// <param name="id">Идентификатор поля.</param>
-        public Task<Ground> GetGroundById(long id);
+        public Task<Ground?> GetGroundById(long id);
     }
 }

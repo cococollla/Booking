@@ -6,9 +6,8 @@ using System.Net;
 
 namespace Booking.WebApi.Controllers
 {
-    [ApiVersion("1.0")]
     [ApiController]
-    [Route("api/v{version:apiVersion}/booking")]
+    [Route("api/v1/booking")]
     public class BookingController : ControllerBase
     {
         private readonly BookingService _bookingService;
@@ -26,14 +25,17 @@ namespace Booking.WebApi.Controllers
         /// <remarks>
         /// Базовый пример: 
         /// 
-        ///     Post /login
+        ///     Post /create
         ///     {
-        ///         "userName":"UserTest",
-        ///         "password":"X_hlT49j8B"
+        ///         "PhoneNumber":"79803777777",
+        ///         "Date":"2024-12-08",
+        ///         "FIO":"Иванов Иван Иванович",
+        ///         "GroundId":"1",             
+        ///         "Interval":"12:11:03" (12-часов, 11-минут, 3-секунды),             
         ///     }
         ///     
         /// </remarks>
-        [HttpPost]
+        [HttpPost("create")]
         [Produces("application/json")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> CreateBooking(CreateBookingRequest request)

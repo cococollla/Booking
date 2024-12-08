@@ -43,5 +43,10 @@ namespace Booking.Domain.Entities
         /// </summary>
         [Phone]
         public required string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Поля.
+        /// </summary>
+        public ICollection<Ground>? Grounds { get; set; } = new List<Ground>();
     }
 }

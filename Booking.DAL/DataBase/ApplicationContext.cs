@@ -22,7 +22,7 @@ namespace Booking.DAL.DataBase
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-
+            Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,10 +43,7 @@ namespace Booking.DAL.DataBase
             modelBuilder.Entity<Ground>().Property(u => u.Name).HasComment("Наименование");
             modelBuilder.Entity<Ground>().Property(u => u.Photos).HasComment("Фотографии");
             modelBuilder.Entity<Ground>().Property(u => u.GeneralDescription).HasComment("Общее описание");
-            modelBuilder.Entity<Ground>().Property(u => u.Parameters).HasComment("Параметры");
             modelBuilder.Entity<Ground>().Property(u => u.Price).HasComment("Цена за один timeSlot");
-            modelBuilder.Entity<Ground>().Property(u => u.Owner).HasComment("Арендодатель");
-            modelBuilder.Entity<Ground>().Property(u => u.TimeSlots).HasComment("TimeSlots");
 
             modelBuilder.Entity<Profile>().Property(u => u.Id).HasComment("Идентификатор");
             modelBuilder.Entity<Profile>().Property(u => u.Name).HasComment("Имя");

@@ -25,12 +25,12 @@ namespace Booking.Domain.Entities
         /// <summary>
         /// Общее описание.
         /// </summary>
-        public string GeneralDescription { get; set; }
+        public required string GeneralDescription { get; set; }
 
         /// <summary>
         /// Параметры (например: Крытая площадка, Искусственная трава, Душевые и тд).
         /// </summary>
-        public IEnumerable<Parameter> Parameters { get; set; } = Enumerable.Empty<Parameter>();
+        public List<Parameter> Parameters { get; set; } = new List<Parameter>();
 
         /// <summary>
         /// Цена за один timeSlot.
@@ -40,12 +40,17 @@ namespace Booking.Domain.Entities
         /// <summary>
         /// Арендодатель.
         /// </summary>
-        public Profile Owner { get; set; }
+        public Profile Owener { get; set; }
+
+        /// <summary>
+        /// Идентификатор арендодателя.
+        /// </summary>
+        public long OwenerId { get; set; }
 
         /// <summary>
         /// TimeSlots.
         /// </summary>
-        public ICollection<TimeSlot> TimeSlots { get; set; } = Array.Empty<TimeSlot>();
+        public ICollection<TimeSlot> TimeSlots { get; set; } = new List<TimeSlot>();
     }
 
     /// <summary>

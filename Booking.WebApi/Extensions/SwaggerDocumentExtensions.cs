@@ -34,7 +34,6 @@ namespace Booking.WebApi.Extensions
             builder.UseSwaggerUI(option =>
             {
                 option.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                option.RoutePrefix = string.Empty;
             });
 
             return builder;

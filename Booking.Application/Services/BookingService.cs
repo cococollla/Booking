@@ -17,6 +17,8 @@ namespace Booking.Application.Services
 
         public async Task CreateBooking(CreateBookingRequestDto request)
         {
+            var test = await _groundRepository.GetGroundById(1);
+
             /*Обязательно учесть оптимистичные блокировки на timeSlot. Обернут изменение в транзакции EF core. 
               Так как для нас критически важно что бы не получилось ситуация, когда два бронирования на один timeSlot.             
              */

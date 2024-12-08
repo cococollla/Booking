@@ -1,4 +1,6 @@
-﻿using Booking.DAL.DataBase;
+﻿using Booking.Application.ExternalServices.Repositories;
+using Booking.DAL.DataBase;
+using Booking.DAL.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +25,16 @@ namespace Booking.DAL
                 opt.UseNpgsql(connectionString);
             });
 
+            return services;
+        }
+
+        /// <summary>
+        /// Регистрация репозиториев.
+        /// </summary>
+        /// <param name="services">Коллекция сервисов</param>
+        public static IServiceCollection RegisterRepository(this IServiceCollection services)
+        {
+            services.AddScoped<IGroundRepository, GroundRepository>();
             return services;
         }
     }

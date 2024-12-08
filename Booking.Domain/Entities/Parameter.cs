@@ -19,5 +19,10 @@
         /// Иконка.
         /// </summary>
         public string? Icon { get; set; }
+
+        /// <summary>
+        /// Поля.
+        /// </summary>
+        public ICollection<Ground>? Grounds { get; set; } = new List<Ground>();
     }
 }
