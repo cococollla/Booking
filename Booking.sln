@@ -4,18 +4,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D9D00016-21A4-4480-A3C4-F3B5FD37BF3B}"
+	ProjectSection(SolutionItems) = preProject
+		Booking.Domain\.editorconfig = Booking.Domain\.editorconfig
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B04D7D43-7935-43CC-8F91-3D3334829A3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Application", "Booking.Application\Booking.Application.csproj", "{D1A2058E-8FDF-471D-A38C-C09C29E29F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.Application", "Booking.Application\Booking.Application.csproj", "{D1A2058E-8FDF-471D-A38C-C09C29E29F65}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{37CBF1E4-1E3C-4A39-BC2A-7D1ED82D3AFA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{3F19E7AF-173E-4A4A-8093-97764903D864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.DAL", "Booking.DAL\Booking.DAL.csproj", "{A9F76D6B-FAB2-4030-8A28-EFB7EC0B4501}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.DAL", "Booking.DAL\Booking.DAL.csproj", "{A9F76D6B-FAB2-4030-8A28-EFB7EC0B4501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.WebApi", "Booking.WebApi\Booking.WebApi.csproj", "{7563F60E-2E8B-4F46-9694-8F014ECEB213}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.WebApi", "Booking.WebApi\Booking.WebApi.csproj", "{7563F60E-2E8B-4F46-9694-8F014ECEB213}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.Domain", "Booking.Domain\Booking.Domain.csproj", "{675F6159-F80A-4895-AF0B-230823A41288}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{696D3593-17C6-4C11-85F0-5088BF4003CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +42,14 @@ Global
 		{7563F60E-2E8B-4F46-9694-8F014ECEB213}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7563F60E-2E8B-4F46-9694-8F014ECEB213}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7563F60E-2E8B-4F46-9694-8F014ECEB213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675F6159-F80A-4895-AF0B-230823A41288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675F6159-F80A-4895-AF0B-230823A41288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675F6159-F80A-4895-AF0B-230823A41288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675F6159-F80A-4895-AF0B-230823A41288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696D3593-17C6-4C11-85F0-5088BF4003CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696D3593-17C6-4C11-85F0-5088BF4003CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696D3593-17C6-4C11-85F0-5088BF4003CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696D3593-17C6-4C11-85F0-5088BF4003CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +60,7 @@ Global
 		{3F19E7AF-173E-4A4A-8093-97764903D864} = {37CBF1E4-1E3C-4A39-BC2A-7D1ED82D3AFA}
 		{A9F76D6B-FAB2-4030-8A28-EFB7EC0B4501} = {3F19E7AF-173E-4A4A-8093-97764903D864}
 		{7563F60E-2E8B-4F46-9694-8F014ECEB213} = {D9D00016-21A4-4480-A3C4-F3B5FD37BF3B}
+		{675F6159-F80A-4895-AF0B-230823A41288} = {D9D00016-21A4-4480-A3C4-F3B5FD37BF3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E7595F49-262A-4B4E-BBD7-2612F0A6173A}
